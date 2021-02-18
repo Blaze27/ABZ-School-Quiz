@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Quiz{% endblock title %}
+{% block body %}
+
+<h1 class="text-center my-2"> Select from the quizess available below.. </h1>
+
+<div class="card-deck py-2">
+  <div class="card">
+    <img src="/static/img/4.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+    <div class="text-center">
+      <a href="test"><button type="button" class="btn btn-outline-primary">Start Quiz</button></a>
+    </div>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last taken two 2 mins ago by your peer</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="/static/img/4.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <div class="text-center">
+      <a href="test"><button type="button" class="btn btn-outline-primary">Start Quiz</button></a>
+    </div>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last taken 3 mins ago by your peer</small>
+    </div>
+  </div>
+  <div class="card">
+    <img src="/static/img/4.jpeg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <div class="text-center">
+      <a href="test"><button type="button" class="btn btn-outline-primary">Start Quiz</button></a>
+    </div>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last taken 1 min ago by your peer</small>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

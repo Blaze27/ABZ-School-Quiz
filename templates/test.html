@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Test
+{% endblock title %}
+
+{% block body %}
+
+<div class="container my-5">
+        <form method="post">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Roll Number">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Name">
+                </div>
+            </div>
+            <div class="container text-center my-5">
+            <a href="starttest"><button type="button" class="btn btn-primary btn-lg">START TEST</button></a>
+            {% comment %} <a href="starttest"><button type="button" class="btn btn-primary btn-lg">START TEST</button></a> {% endcomment %}
+            </div>
+        </form>
+</div>
+
+{% endblock body %}

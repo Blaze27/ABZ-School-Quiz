@@ -1,0 +1,58 @@
+{% extends 'starttestBase.html' %}
+
+{% block title %}TEST{% endblock title %}
+
+{% block jquery %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% endblock jquery %}
+
+{% block body %}
+
+
+    <div class="container text-center" id="main-container">
+        <div class="container-fluid text-center mt-5">
+            <h2>Question <span id="Qcount"> </span>of 10 </h2>
+        </div>
+
+        <div class="container text-right">
+
+            {% comment %} <h1 style="font-size:24px;">Time Taken: {% endcomment %}
+                <h1 id="timetaken">
+
+                </h1>
+
+                <h2> <span id="hour"></span>
+                    <span id="minute"></span>
+                    <span id="seconds"></span>
+                </h2>
+
+                {% comment %} <button id="Displplaytimetaken">Display time taken</button> {% endcomment %}
+        </div>
+        <div class="container text-right">
+            <h4> <span id="score"></span> : 10 </h4>
+        </div>
+
+        {% comment %} This Container Stores the question fetched from the API {% endcomment %}
+        <div class="container my-5">
+            <h4>
+                <p class="text-left question" id="question"> </p>
+            </h4>
+        </div>
+
+        <div class="container">
+            <p class="choices" id="choices">
+
+            </p>
+        </div>
+
+        <div class="container text-right mb-2">
+            <button class="btn btn-primary btn-lg" id="submit-button" onclick="getNext()">Next Question</button>
+        </div>
+    </div>
+
+
+    {% endblock body %}
+
+    {% block scripts %}
+    <script src="/static/js/starttest.js" </script>
+        {% endblock scripts %}
