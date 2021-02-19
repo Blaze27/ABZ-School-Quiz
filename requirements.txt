@@ -1,4 +1,5 @@
 django
+python-decouple
 gunicorn
 django-heroku
-decouple
+
