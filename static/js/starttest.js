@@ -37,6 +37,7 @@ window.onload = () => {
 
 var score = 0;
 var rightAnswer = '';
+var randomNumber;
 var qcount = 1;
 
 function trial() {
@@ -73,14 +74,14 @@ function getNext() {
     "padding": "5px"
 
 });
-    setTimeout(function(){ trial(); }, 500);
+    setTimeout(function(){ trial(); }, 1000);
 }
 
 function getNextQuestion(){ 
     $('#Qcount').html(qcount + " ");
     $('#score').html(score);
     $.ajax({
-        url: 'https://opentdb.com/api.php?amount=10&category=9&type=multiple',
+        url: 'https://opentdb.com/api.php?amount=1&category=21',
         type: "GET",
         success: function(result){
             console.log(result);
@@ -89,12 +90,11 @@ function getNextQuestion(){
             var answers= result.results[0].incorrect_answers;
             rightAnswer= result.results[0].correct_answer;
 
-            console.log(question);
-            console.log(answers);
+            
             randomNumber= Math.floor((Math.random() * answers.length));
             answers.splice(randomNumber, 0, rightAnswer);
 
-            console.log(answers);
+            
 
             $(".question").html(question);
 
@@ -105,7 +105,7 @@ function getNextQuestion(){
             for (var value of answers) {
                 $('#opt')
                   .append(`<input type="radio" class="${value}" id="${value}" name="choice" value="${value}">`)
-                  .append(`<label class="${value}" for="${value}">${value}</label></span>`)
+                  .append(`<label class="${value}" for="${value}"> ${value}</label></span>`)
                   .append(`<br>`);
               }
         },
